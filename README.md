@@ -171,6 +171,13 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 
 For bug reports, feature requests, or contributions, please create an Issue in this repository.
 
+For direct support and inquiries:
+
+Email: [devphp03@gmail.com](mailto:devphp03@gmail.com)
+
+Please include your WHMCS version, PHP version, and a detailed description of the issue when requesting support.
+
+
 ---
 
 ## Author
