@@ -2,52 +2,52 @@
 
 A modern payment gateway integration for WHMCS using Moyasar, supporting Credit Card, Apple Pay, STC Pay, and Samsung Pay.
 
-**Version:** 1.1.0
-**Requires:** WHMCS 7.0+
+**Version:** 1.1.1  
+**Requires:** WHMCS 7.0+  
 **Author:** Meshari Alomari
 
 ---
 
 ## Features
 
-* Credit Card Payments (Visa & Mastercard)
-* Apple Pay Support
-* STC Pay Support
-* Samsung Pay Support
-* Refund Support via Moyasar API
-* Webhook Verification & Security Validation
-* Sandbox and Live Mode Support
-* Configurable Payment Button Text
-* Secure Payment Processing
-* Invoice Ownership Validation
-* Automatic Payment Status Updates
+- Credit Card Payments (Visa & Mastercard)
+- Apple Pay Support
+- STC Pay Support
+- Samsung Pay Support
+- Refund Support via Moyasar API
+- Webhook Verification & Security Validation
+- Sandbox and Live Mode Support
+- Configurable Payment Button Text
+- Secure Payment Processing
+- Invoice Ownership Validation
+- Automatic Payment Status Updates
 
 ---
 
 ## Compatibility
 
-| Component   | Version |
-| ----------- | ------- |
-| WHMCS       | 7.0+    |
-| PHP         | 7.1+    |
-| Moyasar API | Latest  |
+| Component | Version |
+|----------|---------|
+| WHMCS | 7.0+ |
+| PHP | 7.4+ |
+| Moyasar API | Latest |
 
 ---
 
 ## Requirements
 
-* WHMCS 7.0 or later
-* PHP 7.4 or later
-* Active Moyasar Merchant Account
-* Valid Moyasar API Keys
+- WHMCS 7.0 or later
+- PHP 7.4 or later
+- Active Moyasar Merchant Account
+- Valid Moyasar API Keys
 
 ---
 
 ## Official Resources
 
-* Website: https://moyasar.com/en/
-* API Documentation: https://docs.moyasar.com/api/api-introduction
-* Merchant Dashboard: https://dashboard.moyasar.com
+- Website: https://moyasar.com/en/
+- API Documentation: https://docs.moyasar.com/api/api-introduction
+- Merchant Dashboard: https://dashboard.moyasar.com
 
 ---
 
@@ -65,6 +65,7 @@ modules/
 ```
 
 2. Login to your WHMCS Admin Area.
+
 3. Navigate to:
 
 ```text
@@ -72,24 +73,27 @@ Configuration → System Settings → Payment Gateways
 ```
 
 4. Activate **Moyasar**.
+
 5. Enter your API credentials.
+
 6. Configure the webhook endpoint.
+
 7. Save the gateway settings.
 
 ---
 
 ## Configuration
 
-| Setting             | Description                            |
-| ------------------- | -------------------------------------- |
-| Publishable Key     | Moyasar Publishable API Key            |
-| Secret Key          | Moyasar Secret API Key                 |
-| Webhook Secret      | Webhook verification token             |
-| Credit Card         | Enable or Disable Credit Card payments |
-| Apple Pay           | Enable or Disable Apple Pay            |
-| STC Pay             | Enable or Disable STC Pay              |
-| Samsung Pay         | Enable or Disable Samsung Pay          |
-| Payment Button Text | Custom payment button label            |
+| Setting | Description |
+|---------|-------------|
+| Publishable Key | Moyasar Publishable API Key |
+| Secret Key | Moyasar Secret API Key |
+| Webhook Secret | Webhook verification token |
+| Credit Card | Enable or Disable Credit Card payments |
+| Apple Pay | Enable or Disable Apple Pay |
+| STC Pay | Enable or Disable STC Pay |
+| Samsung Pay | Enable or Disable Samsung Pay |
+| Payment Button Text | Custom payment button label |
 
 ---
 
@@ -103,9 +107,9 @@ https://yourdomain.com/modules/gateways/callback/moyasar.php?action=webhook
 
 Enable the following webhook events:
 
-* PAYMENT_PAID
-* PAYMENT_FAILED
-* PAYMENT_REFUNDED
+- PAYMENT_PAID
+- PAYMENT_FAILED
+- PAYMENT_REFUNDED
 
 Copy the generated Webhook Secret and add it to the gateway settings inside WHMCS.
 
@@ -143,17 +147,40 @@ For more information, please refer to the official Moyasar documentation.
 
 ## Security
 
-* Webhook requests are verified using the configured Webhook Secret.
-* Payment requests are validated through the Moyasar API.
-* Invoice ownership is verified before payment processing.
-* Already-paid invoices are automatically redirected.
-* Refund operations are executed through the Moyasar API using secure credentials.
+- Webhook requests are verified using the configured Webhook Secret.
+- Webhook secret verification uses the `X-Event-Secret` header sent by Moyasar.
+- Payment requests are validated through the Moyasar API.
+- Invoice ownership is verified before payment processing.
+- Already-paid invoices are automatically redirected.
+- Refund operations are executed through the Moyasar API using secure credentials.
 
 ---
 
 ## Changelog
 
-See [CHANGELOG.md](CHANGELOG.md)
+### v1.1.1 (2026-07-04)
+
+#### Fixed
+
+- Fixed webhook secret verification.
+- Updated verification to use the `X-Event-Secret` header sent by Moyasar.
+- Removed reliance on incorrect headers (`Moyasar-Secret` and `X-Moyasar-Secret`).
+
+### v1.1.0 (2026-06-20)
+
+#### Initial Release
+
+- Initial public release.
+- Credit Card Payments (Visa & Mastercard)
+- Apple Pay Support
+- STC Pay Support
+- Samsung Pay Support
+- Refund Support
+- Webhook Verification
+- Sandbox and Live Mode Support
+- WHMCS 7.0+ Compatibility
+
+For the complete release history, see [CHANGELOG.md](CHANGELOG.md).
 
 ---
 
@@ -173,14 +200,12 @@ For bug reports, feature requests, or contributions, please create an Issue in t
 
 For direct support and inquiries:
 
-Email: [devphp03@gmail.com](mailto:devphp03@gmail.com)
+**Email:** devphp03@gmail.com
 
 Please include your WHMCS version, PHP version, and a detailed description of the issue when requesting support.
-
 
 ---
 
 ## Author
 
-Meshari Alomari
-
+**Meshari Alomari**
